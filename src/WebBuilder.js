@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import grapesjs from 'grapesjs'
 import 'grapesjs/dist/css/grapes.min.css'
 import 'grapesjs/dist/grapes.min.js'
-import plugin from 'grapesjs-preset-webpage'
+import webPlugin from 'grapesjs-preset-webpage'
+import formPlugin from 'grapesjs-plugin-forms'
+import basicPlugin from 'grapesjs-blocks-basic'
 import ReactText from "./simple-react-text";
 import BaseReactComponent from './base-react-component';
 import ReactComponents from './react-components';
@@ -14,7 +16,7 @@ function WebBuilder() {
       container: '#gjs',
       height: '700px',
       width: '100%',
-      plugins: [plugin, BaseReactComponent, ReactComponents, MuiComponents],
+      plugins: [basicPlugin,formPlugin, webPlugin, BaseReactComponent, ReactComponents, MuiComponents],
       storageManager: {
         id: 'gjs-',
         type: 'local',
@@ -48,7 +50,7 @@ function WebBuilder() {
       },
       pluginsOpts: {
         'grapesjs-preset-webpage': {
-          blocks: ['link-block', 'quote', 'text-basic'],
+          blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map'],
         },
       }
     })
