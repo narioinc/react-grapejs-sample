@@ -9,14 +9,17 @@ import ReactText from "./simple-react-text";
 import BaseReactComponent from './base-react-component';
 import ReactComponents from './react-components';
 import MuiComponents from './epos';
+import grapejsRulers from 'grapesjs-rulers';
+import tabs from 'grapesjs-tabs';
+import flexbox from 'grapesjs-blocks-flexbox'
 
 function WebBuilder() {
   useEffect(() => {
   const editor =  grapesjs.init({
       container: '#gjs',
-      height: '700px',
+      height: '1024px',
       width: '100%',
-      plugins: [basicPlugin,formPlugin, webPlugin, BaseReactComponent, ReactComponents, MuiComponents],
+      plugins: [basicPlugin,formPlugin, webPlugin, BaseReactComponent, ReactComponents, MuiComponents, grapejsRulers, tabs, flexbox],
       storageManager: {
         id: 'gjs-',
         type: 'local',
